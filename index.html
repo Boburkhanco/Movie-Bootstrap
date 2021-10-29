@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./bootstrap-5.0.2-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./bootstrap-5.0.2-dist/js/bootstrap.min.js">
+    <link rel="stylesheet" href="./css/main.css">
+    <title> Movie - Bootstrap</title>
+</head>
+<body>
+
+
+    <style>
+        .left{
+            max-width: 300px;
+        }
+        .main-cont{
+            margin: 0 auto;
+        }
+        .img-1{
+            width: 310px;
+            height: 180px;
+        }
+        .btn-font{
+            font-size: 12px;
+        }
+        .year-num, .star-num{
+            margin-top: -20px;
+        }
+        .year-num::before{
+            content: "";
+            display: block;
+            position: relative;
+            left: -25px;
+            top: 20px;
+            width: 20px;
+            height: 20px;
+            background-color: transparent;
+            background-image: url("./images/calendar2-fill.svg");
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        .star-num::before{
+            content: "";
+            display: block;
+            position: relative;
+            left: -25px;
+            top: 20px;
+            width: 20px;
+            height: 20px;
+            background-color: transparent;
+            background-image: url("./images/star-fill.svg");
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        .pages-group{
+            position: relative;
+            top: 34px;
+            left: 255px;
+        }
+        .btn--active{
+            background-color: rgb(49, 108, 244);
+            color: white;
+        }
+        .btn-remove{
+            max-width: 70px;
+            font-size: 13px;
+        }
+    </style>
+
+
+    <div class="container container-on main-cont">
+        <h1 class="main__title h1 text-center mb-4">Movies catalog</h1>
+        <div class="container d-flex">
+            <div class="left">
+                <input class="form-control" type="text" placeholder="Search by name" aria-label="Movie name">
+                <input class="form-control mt-3" type="number" placeholder="Search by rating" aria-label="Movie rating">
+                <select class="form-select mt-3" aria-label="Choose movies">
+                    <option selected>All</option>
+                    <option value="1">Iron Man (2008)</option>
+                    <option value="2">The Incredible Hulk (2008)</option>
+                    <option value="3">Iron Man 2 (2010)</option>
+                    <option value="4">Thor (2011)</option>
+                    <option value="5">Captain America: The First Avenger (2011)</option>
+                    <option value="6">The Avengers (2012)</option>
+                    <option value="7">Iron Man 3 (2013)</option>
+                    <option value="8">Thor: The Dark World (2013)</option>
+                    <option value="9">Captain America: The Winter Soldier (2014)</option>
+                    <option value="10">Guardians of the Galaxy (2014)</option>
+                    <option value="11">Avengers: Age of Ultron (2015)</option>
+                    <option value="12">Ant-Man (2015)</option>
+                    <option value="13">Captain America: Civil War (2016)</option>
+                    <option value="14">Doctor Strange (2016)</option>
+                    <option value="15">Guardians of the Galaxy Vol. 2 (2017)</option>
+                    <option value="16">Spider-Man: Homecoming (2017)</option>
+                    <option value="17">Thor: Ragnarok (2017)</option>
+                    <option value="18">Black Panther (2018)</option>
+                    <option value="19">Avengers: Infinity War (2018)</option>
+                    <option value="20">Ant-Man and the Wasp (2018)</option>
+                    <option value="21">Captain Marvel (2019)</option>
+                    <option value="22">Avengers: Endgame (2019)</option>
+                    <option value="23">Spider-Man: Far From Home (2019)</option>
+                    <option value="24">Black Widow (2021)</option>
+                    <option value="25">Shang-Chi and the Legend of the Ten Rings (2021)</option>
+                    <option value="26">Eternals (2021)</option>
+                    <option value="27">Spider-Man: No Way Home (2021)</option>
+                    <option value="28">Doctor Strange in the Multiverse of Madness (2022)</option>
+                    <option value="29">Thor Love and Thunder (2022)</option>
+                    <option value="30">Black Panther: Wakanda Forever (2022)</option>
+                    <option value="31">The Marvels (2022)</option>
+                    <option value="32">The Guardians of the Galaxy Holiday Special (2022)</option>
+                    <option value="33">Ant-Man and the Wasp: Quantumania (2023)</option>
+                    <option value="34">Guardians of the Galaxy Vol. 3 (2023)</option>
+                  </select>
+
+                  <select class="form-select mt-3" aria-label="Choose movies">
+                    <option selected>Rating (high to low)</option>
+                    <option value="1">Iron Man (2008)</option>
+                    <option value="2">The Incredible Hulk (2008)</option>
+                    <option value="3">Iron Man 2 (2010)</option>
+                    <option value="4">Thor (2011)</option>
+                    <option value="5">Captain America: The First Avenger (2011)</option>
+                    <option value="6">The Avengers (2012)</option>
+                    <option value="7">Iron Man 3 (2013)</option>
+                    <option value="8">Thor: The Dark World (2013)</option>
+                    <option value="9">Captain America: The Winter Soldier (2014)</option>
+                    <option value="10">Guardians of the Galaxy (2014)</option>
+                    <option value="11">Avengers: Age of Ultron (2015)</option>
+                    <option value="12">Ant-Man (2015)</option>
+                    <option value="13">Captain America: Civil War (2016)</option>
+                    <option value="14">Doctor Strange (2016)</option>
+                    <option value="15">Guardians of the Galaxy Vol. 2 (2017)</option>
+                    <option value="16">Spider-Man: Homecoming (2017)</option>
+                    <option value="17">Thor: Ragnarok (2017)</option>
+                    <option value="18">Black Panther (2018)</option>
+                    <option value="19">Avengers: Infinity War (2018)</option>
+                    <option value="20">Ant-Man and the Wasp (2018)</option>
+                    <option value="21">Captain Marvel (2019)</option>
+                    <option value="22">Avengers: Endgame (2019)</option>
+                    <option value="23">Spider-Man: Far From Home (2019)</option>
+                    <option value="24">Black Widow (2021)</option>
+                    <option value="25">Shang-Chi and the Legend of the Ten Rings (2021)</option>
+                    <option value="26">Eternals (2021)</option>
+                    <option value="27">Spider-Man: No Way Home (2021)</option>
+                    <option value="28">Doctor Strange in the Multiverse of Madness (2022)</option>
+                    <option value="29">Thor Love and Thunder (2022)</option>
+                    <option value="30">Black Panther: Wakanda Forever (2022)</option>
+                    <option value="31">The Marvels (2022)</option>
+                    <option value="32">The Guardians of the Galaxy Holiday Special (2022)</option>
+                    <option value="33">Ant-Man and the Wasp: Quantumania (2023)</option>
+                    <option value="34">Guardians of the Galaxy Vol. 3 (2023)</option>
+                  </select>
+                  <button class="btn btn-primary mt-3" type="submit" style="width: 300px;">Search</button>
+
+                  <h2 class="h2 bookmark-title mt-4">Bookmarked movies</h2>
+                  <div class="bookmarked">
+                      <div class="box-one border border-1 rounded-top pt-3 ps-4 pb-3">
+                          <h4 class="h4">Avengers: Infinity War</h4>
+                          <button type="button" class="btn btn-danger btn-remove">Remove</button>
+                      </div>
+                      <div class="box-one border border-1 pt-3 ps-4 pb-3">
+                        <h4 class="h4">The Avengers</h4>
+                        <button type="button" class="btn btn-danger btn-remove">Remove</button>
+                    </div>
+                    <div class="box-one border border-1 rounded-bottom pt-3 ps-4 pb-3">
+                        <h4 class="h4">12 Years a Slave</h4>
+                        <button type="button" class="btn btn-danger btn-remove">Remove</button>
+                    </div>
+                  </div>
+            </div>
+            <div class="right ms-5">
+                <h5 class="right__title h5 ">Search results: 39</h5>
+                <div class="alert alert-info" role="alert"">Use the form on the left to search for a movie</div>
+
+                <div class="cards d-flex">
+                    <div class="card" style="width: 310px; border-top: 3px solid black;">
+                        <img src="./images/avengers-1.jpeg" class="card-img-top img-1" alt="movie picture">
+                        <div class="card-body">
+                          <h5 class="card-title h4">Avengers: Infinity War</h5>
+                          <p class="year year-num ms-4">2018</p>
+                          <p class="star star-num ms-4">8.7</p>
+                          <a href="#" class="btn btn-outline-primary btn-font">Watch trailer</a>
+                          <a href="#" class="btn btn-outline-info btn-font">More info</a>
+                          <a href="#" class="btn btn-outline-success btn-font">Bookmark</a>
+                        </div>
+                    </div>
+
+                    <div class="card ms-4" style="width: 310px; border-top: 3px solid black;">
+                        <img src="./images/avengers-2.jpeg" class="card-img-top img-1" alt="movie picture">
+                        <div class="card-body">
+                          <h5 class="card-title h4">The Avengers</h5>
+                          <p class="year year-num ms-4">2012</p>
+                          <p class="star star-num ms-4">8.1</p>
+                          <a href="#" class="btn btn-outline-primary btn-font">Watch trailer</a>
+                          <a href="#" class="btn btn-outline-info btn-font">More info</a>
+                          <a href="#" class="btn btn-outline-success btn-font">Bookmark</a>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="btn-group pages-group" role="group" aria-label="Movie pages">
+                        <button type="button" class="btn btn-outline-primary btn--active">1</button>
+                        <button type="button" class="btn btn-outline-primary">2</button>
+                        <button type="button" class="btn btn-outline-primary">3</button>
+                        <button type="button" class="btn btn-outline-primary">4</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
